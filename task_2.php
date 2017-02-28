@@ -1,6 +1,5 @@
 <?php
 $str =  "   Харьков, Львов, Днепропетровск " ;
-
 echo str_replace(" ","",$str);
 echo "<br / >" ;
 
@@ -19,13 +18,20 @@ $str_1 = " <!DOCTYPE html><html><head><script>window.getYourPrivateBrowserCoocki
 echo strip_tags($str_1);
 
 echo "<br / >" ;
+// сделать первую букву в верхнем регистре
 $str_2 = "Random string" ;
+//сделать первые буквы всех слов в верхнем регистре
 echo strlen ($str_2)."<br / >"  ;
+// Сделать всю строку в верхнем регистре
 echo strrev($str_2)."<br / >"  ;
 $str_3 = ( 'hello world');
+//- сделать всю строку в нижнем регистре
 echo ucfirst($str_3)."<br / >".strtoupper($str_3)."<br / >".strtolower($str_3)."<br / >"  ;
+//обрезаю строку по заданному символу 
+
 $final = "some random text 'Hello, PHP progrаmmer!' some random text" ;
-$str_4 = strpos($final, "'") ;
-echo ($str_4)."<br / >"  ;
-$res = substr($final,18,-18);
-echo $res;
+
+echo "<br / >" ;
+
+$domain = explode("'", $final);
+echo $domain[1];
