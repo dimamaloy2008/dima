@@ -1,70 +1,102 @@
 <?php
-$array = array('w' => 44, 'a' => 78, 'h' => 45,'c' => 67,'b' => 4) ;
-// отсортировать массив по ключу
-$alist = array('w' => 44, 'a' => 78, 'h' => 45,'c' => 67,'b' => 4);
-echo "<pre>";
-ksort ($alist);
-print_r ($alist);
-echo "<br />" ;
-//отсортировать массив по значению
-asort ($alist) ;
-print_r ($alist);
-echo "<br />" ;
 
-// проверить, есть ли в массиве ключ 'f'
-if (array_key_exists('f', $array)) { 
-echo  "ключ  найден";
-}
-else {echo 'ключ не найден' ;}
-echo "<br />" ;
-// проверить, есть ли в массиве ключ 'f'
-if (in_array ("56", $array)) {
-echo "есть такая цифра";}
-else {echo "нет такой цифры вы банкрот" ;}
-echo "<br />" ;
- //разбить массив на кусочки по два элемента.
-$dima = array_chunk($array,2 ) ;
-echo print_r($dima);
-echo "<br />" ;
-//- обрезать массив. оставить в нем первые три элемента
-$maloy = array_slice($array , 0, 3);
-echo  print_r($maloy) ;
-echo "<br />" ;
-//перевернуть массив местами
-$reversed = array_reverse($array);
-echo print_r($array);
-echo "<br />" ;
-//посчитать количество элементов в массиве.
-echo count($array);
-echo "<br />" ;
+//Практическая частьВначале написать самом ответы, а потом проверить себя Что выведет?
 
-// проверить, не пустой ли массив
-if (!empty($array)){
-    echo $array;
- }else{
-    echo 'false';
- }
- echo "<br />" ;
-//вывести на экран элемент по ключу 'w'
- echo print_r($array [w]) ;
- echo "<br />" ;
- //- присвоить значение '123' элементу с ключом 'a'
- $array[a] = 123;
- //- добавить в массив новый элемент с ключом 'f' и значением 55
- $array[f]= 55;
- echo print_r ($array);
- echo "<br />" ;
- //поместить в переменную первый элемент массива 
- current($array);
- $d = current($array);
- echo print_r($d);
-  echo "<br />" ;
-//- добавить новое значение в эелемент.
- $array[] = "good work dima";
- // вывести на экран и посмотреть какой будет ключ нового элемента.
-echo print_r($array);
-echo "<br />" ;
-$pochti = array(1, 1, 23, 45) ;
-$final = array_unique ($pochti);
-echo print_r ($final);
- echo "<br />" ;
+$a = 0;
+$b = '0';
+$c = '0.00';
+$d = 0.00;
+$e = '';
+$f = null;
+$g = 'null';
+$h = 'a0';
+$j = 'a' . 0;
+$k = '0a';
+$l = 0 . 'a';
+$z = 5;
+$i = '5';
+$x = '1';
+$v = false;
+$n = true;
+$s = 'false';
+$w = 'true';
+//$r = [];
+$t = '    ';
+
+echo "<br />" . $a > $b; //По идее должно ничего не выводить , но вывводится единица
+echo $z > $i; //falce
+echo "<br/>";
+echo "<br/>" . $b > $r; //true
+echo "<br/>" . $g > $f; //true
+echo "<br/>" . $k > $j; //false
+//echo "<br/>" . $a / $b; //на 0 делить нельзя
+echo "<br/>" . $a * $b; // 0
+echo "<br/>" . $z / $i; //1
+echo "<br/>" . $z * $i; //25
+echo "<br/>" . $r / $z; //0
+
+var_dump($z == $i); //true 
+var_dump($a == $b); //true 
+echo "<br/>";
+var_dump($a == $c); //true 
+echo "<br/>";
+var_dump($a == $f); //true
+echo "<br/>";
+var_dump($a == $g); //true 
+echo "<br/>";
+var_dump($a == $v); //true 
+echo "<br/>";
+var_dump($a == $r); //true
+echo "<br/>";
+var_dump($a == $t); //true
+echo "<br/>";
+var_dump($a == $e); //true
+echo "<br/>";
+var_dump($c == $f); //false
+echo "<br/>";
+var_dump($c == $g); //false
+echo "<br/>";
+var_dump($c == $v); //false
+echo "<br/>";
+var_dump($c == $s); //false
+echo "<br/>";
+var_dump($c == $r); //false
+echo "<br/>";
+var_dump($c == $t); //false
+echo "<br/>";
+var_dump($c == $e); //false
+echo "<br/>";
+var_dump($s == $v); //я думал, что true,но окозалось false
+//echo "<br/>";
+var_dump($v === $a); //False
+echo "<br/>";
+var_dump($v === $r); //False
+echo "<br/>";
+var_dump($v === null); //False
+var_dump($a === $d); //False
+echo "<br/>";
+var_dump($a === $b); //False
+echo "<br/>";
+var_dump($z === $i); //False
+echo "<br/>";
+var_dump($a + $b); // 0
+echo "<br/>";
+var_dump($l + $j); //0
+echo "<br/>";
+var_dump($h + $k); //0
+echo "<br/>";
+var_dump($z + $i); //10
+echo "<br/>";
+var_dump($a - $b); //0
+echo "<br/>";
+var_dump($z - $i); //0
+echo "<br/>";
+var_dump($a . $b); //00
+echo "<br/>";
+var_dump($z . $i); //55
+echo "<br/>";
+var_dump($c . $d); //я думал 0.000.00 , но получилось 0.000 ,Маша обьяснила почему)
+echo "<br/>";
+var_dump($f . $g); //null
+echo "<br/>";
+var_dump($s . $r); //false
