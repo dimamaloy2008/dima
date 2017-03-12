@@ -1,31 +1,23 @@
 <?php
-$str =  "   Харьков, Львов, Днепропетровск " ;
 
-echo str_replace(" ","",$str);
-echo "<br / >" ;
-
-$text = "   Харьков, Львов, Днепропетровск ";
-
-
-echo trim($text) ;
-
-
-echo "<br / >" ;
-$string = "067-123-45-67" ;
-
-echo str_replace("067", "095", $string) ;
-echo "<br / >" ;
-$str_1 = " <!DOCTYPE html><html><head><script>window.getYourPrivateBrowserCoockiesDataAndSendToBadGuys();<script></head><body>Site Content</body></html> " ;
-echo strip_tags($str_1);
-
-echo "<br / >" ;
-$str_2 = "Random string" ;
-echo strlen ($str_2)."<br / >"  ;
-echo strrev($str_2)."<br / >"  ;
-$str_3 = ( 'hello world');
-echo ucfirst($str_3)."<br / >".strtoupper($str_3)."<br / >".strtolower($str_3)."<br / >"  ;
-$final = "some random text 'Hello, PHP progrаmmer!' some random text" ;
-$str_4 = strpos($final, "'") ;
-echo ($str_4)."<br / >"  ;
-$res = substr($final,18,-18);
-echo $res;
+// Task-5. Есть массив [1,2,3,4,5,6,7,8,9]
+// * - увеличить в массиве каждый четный элемент на 2,
+//* каждый третий на 3(сделать это через (if else, if elseif, switchcase) . 
+// * сделать это всеми циклами
+$array = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
+foreach ($array as $value)
+    if ($value % 2 == 0) {
+        $value = $value + 2;
+    } elseif ($value % 3 == 0) {
+        $value = $value + 3;
+    }
+//не знаю ток как сделать чтобы вывело масив целиком с заданными параметрами ,
+//по отдельности выводит , а вместе не хочет((
+$array = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
+foreach ($array as &$value)
+    switch ($array) {
+        case $value % 2 == 0: $value = $value + 2;
+            break;
+        case $value % 3 == 0: $value = $value + 3;
+            break;
+    }
